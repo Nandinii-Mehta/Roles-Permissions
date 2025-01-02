@@ -21,7 +21,7 @@
                             <img src="assets/images/users/avatar-1.jpg" alt="" class="rounded-full inline-block">
                         </div>
                         <h4 class="font-bold text-xl text-slate-700 mb-0 dark:text-slate-200">{{Auth::user()->name}}</h4>
-                        <p class="text-slate-400 text-sm font-semibold">Admin</p>
+                        <p class="text-slate-400 text-sm font-semibold"></p>
                     </div>
                 </div><!--end card-body-->
             </div> <!--end card-->

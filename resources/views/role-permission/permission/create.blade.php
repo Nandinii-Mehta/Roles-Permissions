@@ -7,7 +7,6 @@
             <a href="{{route('permissions.index')}}" class="bg-red-500 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-red-800 hover:text-white">
                 Back
             </a>
-
             <div class="card h-full">
                 <div class="card-header">
                     <h4 class="card-title">Create Permissions</h4>

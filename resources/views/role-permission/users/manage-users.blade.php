@@ -3,19 +3,14 @@
 @section('content')
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        @if (session('status'))
-        <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
-            <span class="font-medium">{{session('status')}}</span>
-        </div>
-        @endif
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
-            <a href="{{route('permissions.create')}}" class="bg-blue-600 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-blue-800 hover:text-white">
-                Add Permission
+            <a href="{{route('users.create')}}" class="bg-blue-600 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-blue-800 hover:text-white">
+                Add User
             </a>
 
             <div class="card h-full">
                 <div class="card-header">
-                    <h4 class="card-title">Manage Permissions</h4>
+                    <h4 class="card-title">Manage Users</h4>
                 </div><!--end card-header-->
                 <div class="card-body">
                     <div class="justify-items-center relative overflow-x-auto sm:rounded">
@@ -28,36 +23,43 @@
                                     <th class="text-sm font-medium text-white px-3 py-3">
                                         Name
                                     </th>
+                                    <th class="text-sm font-medium text-white px-3 py-3">
+                                        Email
+                                    </th>
                                     <th class="text-sm font-medium text-white px-3 py-3 border-r border-transparent">
                                         Action
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($permissions as $permission)
+                                @foreach ($users as $user)
                                 <tr>
                                     <td class="text-center text-dark py-2 px-3 bg-slate-50 dark:bg-slate-900/20 dark:text-slate-300 border-b border-l border-[#E8E8E8] dark:border-slate-900">
-                                        {{$permission->id}}
+                                        {{$user->id }}
                                     </td>
                                     <td class="text-center text-dark py-2 px-3 bg-white dark:bg-slate-700 dark:text-slate-300 border-b border-[#E8E8E8] dark:border-slate-900">
-                                        {{$permission->name}}
+                                        {{ $user->name}}
+                                    </td>
+                                    <td class="text-center text-dark py-2 px-3 bg-slate-50 dark:bg-slate-900/20 dark:text-slate-300 border-b border-[#E8E8E8] dark:border-slate-900">
+                                        {{ $user->email}}
                                     </td>
                                     <td class="flex space-x-2 justify-center text-center text-dark py-2 px-3 bg-slate-50 dark:bg-slate-900/20 dark:text-slate-300 border-b border-[#E8E8E8] dark:border-slate-900">
-                                        <a href="{{route('permissions.edit',$permission->id)}}" class="border border-green-700 px-3 py-2 text-sm text-green-700 inline-block rounded hover:bg-green-800 hover:text-white">
+                                        <a href="{{route('users.edit',$user->id)}}" class="border border-green-700 px-3 py-2 text-sm text-green-700 inline-block rounded hover:bg-green-800 hover:text-white">
                                             Edit
                                         </a>
-                                        <form method="post" action="{{route('permissions.destroy',$permission->id)}}">
+                                        <form method="post" action="{{route('users.destroy',$user->id)}}">
                                             @csrf
                                             @method('delete')
-                                            <button class="border border-red-500 px-3 py-2 text-sm text-red-500 inline-block rounded hover:bg-red-500 hover:text-white" type="submit">
-
-                                                Delete
-
+                                            <button type="submit">
+                                                <a href="javascript:void(0)" class="border border-red-500 px-3 py-2 text-sm text-red-500 inline-block rounded hover:bg-red-500 hover:text-white">
+                                                    Delete
+                                                </a>
                                             </button>
                                         </form>
                                     </td>
                                 </tr>
                                 @endforeach
+
                             </tbody>
                         </table>
                     </div>

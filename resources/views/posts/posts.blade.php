@@ -4,19 +4,19 @@
 <div class="py-12">
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
-            <a href="{{route('posts.create')}}" class="border border-gray-500 px-3 mb-2 py-2 text-sm text-gray-700 inline-block rounded hover:bg-gray-500 hover:text-white">
+            <a href="{{route('posts.create')}}" class="bg-blue-600 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-blue-800 hover:text-white">
                 Add Post
             </a>
-           
+
             <div class="card h-full">
                 <div class="card-header">
                     <h4 class="card-title">Manage Posts</h4>
                 </div><!--end card-header-->
                 <div class="card-body">
-                    <div class="relative overflow-x-auto  sm:rounded">
+                    <div class="justify-items-center relative overflow-x-auto sm:rounded">
                         <table class="table-auto w-full">
                             <thead>
-                                <tr class=" bg-gray-800 text-center">
+                                <tr class=" bg-blue-600 text-center">
                                     <th class="text-sm font-medium text-white px-3 py-3 border-l border-transparent">
                                         ID
                                     </th>
@@ -50,7 +50,7 @@
                                         {{ $post->description}}
                                     </td>
                                     <td class="text-center justify-center flex space-x-3 text-dark py-2 px-3 bg-white dark:bg-slate-700 dark:text-slate-300 border-b border-r border-[#E8E8E8] dark:border-slate-900">
-                                        <a href="{{route('posts.edit',$post->id)}}" class="border border-gray-500 px-3 py-2 text-sm text-gray-500 inline-block rounded hover:bg-gray-500 hover:text-white">
+                                        <a href="{{route('posts.edit',$post->id)}}" class="border border-green-700 px-3 py-2 text-sm text-green-700 inline-block rounded hover:bg-green-800 hover:text-white">
                                             Edit
                                         </a>
                                         <form method="post" action="{{route('posts.destroy',$post->id)}}">

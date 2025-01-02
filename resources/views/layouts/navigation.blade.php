@@ -20,13 +20,12 @@
                         <a class="block font-medium text-gray-400" href="{{route('home')}}"> Home </a>
                     </button>
                 </li>
-                @can('manage users')
+                
                 <li>
-                    <a class="block font-medium text-gray-400" href="{{route('dashboard')}}">
+                    <a class="block font-medium text-gray-400" href="{{route('users.index')}}">
                         Users
                     </a>
                 </li>
-                @endcan
                 <li>
                     <a class="block font-medium text-gray-400" href="{{route('roles.index')}}">
                         Roles

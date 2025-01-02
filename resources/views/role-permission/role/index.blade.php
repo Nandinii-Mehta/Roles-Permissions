@@ -9,7 +9,7 @@
         </div>
         @endif
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
-            <a href="{{route('roles.create')}}" class="bg-gray-500 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-gray-800 hover:text-white">
+            <a href="{{route('roles.create')}}" class="bg-blue-600 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-blue-800 hover:text-white">
                 Add Role
             </a>
 
@@ -21,7 +21,7 @@
                     <div class="justify-items-center relative overflow-x-auto sm:rounded">
                         <table class="table-auto w-2/3 ">
                             <thead>
-                                <tr class=" bg-gray-800 text-center">
+                                <tr class=" bg-blue-600 text-center">
                                     <th class="text-sm font-medium text-white px-3 py-3 border-l border-transparent">
                                         ID
                                     </th>
@@ -46,7 +46,7 @@
                                         <a href="{{route('roles.give-permissions',$role->id)}}" class="border border-gray-500 px-3 py-2 text-sm text-gray-500 inline-block rounded hover:bg-gray-500 hover:text-white">
                                             Add / Edit Role-Permission
                                         </a>
-                                        <a href="{{route('roles.edit',$role->id)}}" class="border border-gray-500 px-3 py-2 text-sm text-gray-500 inline-block rounded hover:bg-gray-500 hover:text-white">
+                                        <a href="{{route('roles.edit',$role->id)}}" class="border border-green-700 px-3 py-2 text-sm text-green-700 inline-block rounded hover:bg-green-800 hover:text-white">
                                             Edit
                                         </a>
                                         <form method="post" action="{{route('roles.destroy',$role->id)}}">
