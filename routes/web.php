@@ -45,8 +45,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 
-Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard')->middleware(['auth', 'role:admin']);
-Route::delete('/dashboard/{id}', [UserController::class, 'destroy'])->name('user.delete')->middleware(['auth', 'role:admin']);
+// Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard')->middleware(['auth', 'role:admin']);
+// Route::delete('/dashboard/{id}', [UserController::class, 'destroy'])->name('user.delete')->middleware(['auth', 'role:admin']);
 
 
 require __DIR__ . '/auth.php';
