@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
@@ -56,5 +57,21 @@ class RoleController extends Controller
         $roles = Role::findOrFail($id);
         $roles->delete();
         return redirect()->route('roles.index')->with('status', 'Role Deleted Successfully');
+    }
+    public function addPermissionToRole($id)
+    {
+        $permissions = Permission::all();
+        $role = Role::findOrFail($id);
+        return view('role-permission.role.add-permissions', compact(['role', 'permissions']));
+    }
+
+    public function givePermissionToRole($id, Request $request)
+    {
+        $request->validate([
+            'permission' => 'required'
+        ]);
+
+        $role = Role::findOrFail($id);
+        $role->syncPermissions($request->permission);
     }
 }

@@ -18,8 +18,8 @@
                     <h4 class="card-title">Manage Roles</h4>
                 </div><!--end card-header-->
                 <div class="card-body">
-                    <div class="relative overflow-x-auto  sm:rounded">
-                        <table class="table-auto w-full">
+                    <div class="justify-items-center relative overflow-x-auto sm:rounded">
+                        <table class="table-auto w-2/3 ">
                             <thead>
                                 <tr class=" bg-gray-800 text-center">
                                     <th class="text-sm font-medium text-white px-3 py-3 border-l border-transparent">
@@ -43,6 +43,9 @@
                                         {{$role->name}}
                                     </td>
                                     <td class="flex space-x-2 justify-center text-center text-dark py-2 px-3 bg-slate-50 dark:bg-slate-900/20 dark:text-slate-300 border-b border-[#E8E8E8] dark:border-slate-900">
+                                        <a href="{{route('roles.give-permissions',$role->id)}}" class="border border-gray-500 px-3 py-2 text-sm text-gray-500 inline-block rounded hover:bg-gray-500 hover:text-white">
+                                            Add / Edit Role-Permission
+                                        </a>
                                         <a href="{{route('roles.edit',$role->id)}}" class="border border-gray-500 px-3 py-2 text-sm text-gray-500 inline-block rounded hover:bg-gray-500 hover:text-white">
                                             Edit
                                         </a>

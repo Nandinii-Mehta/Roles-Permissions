@@ -18,8 +18,8 @@
                     <h4 class="card-title">Manage Permissions</h4>
                 </div><!--end card-header-->
                 <div class="card-body">
-                    <div class="relative overflow-x-auto  sm:rounded">
-                        <table class="table-auto w-full">
+                    <div class="justify-items-center relative overflow-x-auto sm:rounded">
+                        <table class="table-auto w-2/3 ">
                             <thead>
                                 <tr class=" bg-gray-800 text-center">
                                     <th class="text-sm font-medium text-white px-3 py-3 border-l border-transparent">
