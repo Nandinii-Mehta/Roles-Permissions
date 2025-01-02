@@ -12,7 +12,7 @@ Route::get('/', function () {
 });
 
 
-Route::middleware(['auth', 'role:super-admin'])->group(function () {
+// Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/permissions', [PermissionController::class, 'index'])->name('permissions.index');
     Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
     Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
@@ -28,7 +28,7 @@ Route::middleware(['auth', 'role:super-admin'])->group(function () {
     Route::delete('/roles/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');
     Route::get('/roles/{id}/give-permissions', [RoleController::class, 'addPermissionToRole'])->name('roles.give-permissions');
     Route::put('/roles/{id}/give-permissions', [RoleController::class, 'givePermissionToRole'])->name('roles.give-permissions.update');
-});
+// });
 
 
 Route::middleware('auth')->group(function () {
