@@ -4,6 +4,7 @@ use App\Http\Controllers\EnlvItemsMasterController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PurchaseCodeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -56,8 +57,10 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/items/home', [EnlvItemsMasterController::class, 'home'])->name('items.home');
 Route::get('/items', [EnlvItemsMasterController::class, 'index'])->name('items.index');
+Route::get('/items/create', [EnlvItemsMasterController::class, 'create'])->name('items.create');
 
 
+Route::get('/purchasecodes',[PurchaseCodeController::class,'index'])->name('purchasecodes.index');
 
 // Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard')->middleware(['auth', 'role:admin']);
 // Route::delete('/dashboard/{id}', [UserController::class, 'destroy'])->name('user.delete')->middleware(['auth', 'role:admin']);

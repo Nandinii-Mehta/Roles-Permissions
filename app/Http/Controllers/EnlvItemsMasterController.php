@@ -24,6 +24,12 @@ class EnlvItemsMasterController extends Controller
         // $items = EnlvItemsMaster::simplePaginate(5);
         return view('items.index', compact('items'));
     }
+    public function create()
+    {
+        return view('items.create');
+    }
 }
+
+
 
 // SELECT i.id,i.item_id,i.item_name,i.category,v.version FROM enlv_items_master i LEFT JOIN enlv_product_versions v ON i.item_id=v.pid;

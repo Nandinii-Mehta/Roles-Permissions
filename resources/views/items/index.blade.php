@@ -3,9 +3,9 @@
 @section('content')
 
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-    <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
+    <div class="bg-white overflow-hidden p-4 shadow-sm sm:rounded-lg w-[calc(100%+8rem)]">
         <div class="card h-full">
-            <a href="{{route('posts.create')}}" class="bg-blue-600 m-3 px-3 mb-2 py-2 text-md text-white inline-block rounded hover:bg-blue-800 hover:text-white">
+            <a href="{{route('items.create')}}" class="bg-blue-600 m-3 px-3 mb-2 py-2 text-md text-white inline-block rounded hover:bg-blue-800 hover:text-white">
                 +Add New Item
             </a>
             <div class="card-header">
@@ -58,10 +58,21 @@
                                 <td class="text-center text-dark py-2 px-3 bg-slate-50 dark:bg-slate-900/20 dark:text-slate-300 border-b border-[#E8E8E8] dark:border-slate-900">
                                     {{ $item->category }}
                                 </td>
-                                <td class="text-center justify-center  text-dark py-2 px-3 bg-white dark:bg-slate-700 dark:text-slate-300 border-b border-r border-[#E8E8E8] dark:border-slate-900">
-                                    <div class="sm:col-span-12  md:col-span-6 lg:col-span-3 xl:col-span-3 dark:text-slate-400 group text-center">
-                                        <i class="ti ti-menu-2 dark:text-slate-300 group-hover:text-blue-400"></i>
-                                    </div>
+                                <td class="text-center justify-center text-dark py-2 px-3 bg-white dark:bg-slate-700 dark:text-slate-300 border-b border-r border-[#E8E8E8] dark:border-slate-900">
+                                    <i class="ti ti-menu-2 text-black"></i>
+                                    <!-- <div class="sm:col-span-12 md:col-span-6 lg:col-span-3 xl:col-span-3 dark:text-slate-400 group text-center">
+                                        <div class="relative">
+                                            <button class="flex items-center justify-center w-10 h-10 " id="menu-button">
+                                               
+                                            </button>
+                                            <div class="absolute z-10 text-left right-0 mt-2 w-48 bg-gray-50 border border-gray-200 rounded-md shadow-lg hidden group focus-within:block" id="dropdown-menu">
+                                                <a href="" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Add Version</a>
+                                                <a href="" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Manage Version</a>
+                                                <a href="" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Edit</a>
+                                                <a href="" class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Delete</a>
+                                            </div>
+                                        </div>
+                                    </div> -->
                                 </td>
                             </tr>
                             @endforeach
@@ -73,5 +84,4 @@
         </div>
     </div>
 </div>
-
 @endsection
