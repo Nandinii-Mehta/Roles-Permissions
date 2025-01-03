@@ -12,7 +12,7 @@
                     <h4 class="card-title">Add Item</h4>
                 </div>
                 <div class="card-body">
-                    <form action="{{route('posts.store')}}" method="post">
+                    <form action="{{route('items.store')}}" method="post">
                         @csrf
                         <div class="mb-6">
                             <label for="item_id" class="label">Item Id</label>
@@ -32,11 +32,11 @@
                         </div>
                         <div class="mb-6">
                             <label for="color" class="label">Color</label>
-                            <input type="text" id="color" name="color" class="form-control" placeholder="Enter Color">
+                            <input type="color" id="color" name="color" value="#ff0000"  placeholder="Enter Color">
                         </div>
                         <div class="mb-6">
                             <label for="image_thumbnail_link" class="label">Image Thumbnail Link</label>
-                            <input type="text" id="image_thumbnail_link" name="image_thumbnail_link" class="form-control" placeholder="Enter Description">
+                            <input type="text" id="image_thumbnail_link" name="image_thumbnail_link" class="form-control" placeholder="Enter Image Thumbnail Link">
                         </div>
                         <div class="mb-6">
                             <label for="license_update" class="label">License Update</label>

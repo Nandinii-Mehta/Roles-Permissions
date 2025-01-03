@@ -12,7 +12,7 @@ class EnlvItemsMasterController extends Controller
     public function home()
     {
         $items = EnlvItemsMaster::all();
-        return view('items.home',compact('items'));
+        return view('items.home', compact('items'));
     }
     public function index()
     {
@@ -27,6 +27,13 @@ class EnlvItemsMasterController extends Controller
     public function create()
     {
         return view('items.create');
+    }
+    public function store(Request $request)
+    {
+    
+
+        EnlvItemsMaster::create($request->all());
+        return redirect()->route('items.index');
     }
 }
 
