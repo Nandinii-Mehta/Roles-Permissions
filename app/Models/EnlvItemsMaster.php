@@ -19,4 +19,8 @@ class EnlvItemsMaster extends Model
     ];
 
     public $timestamps = false;
+
+    public function  versions()  {
+        return $this->hasMany(ProductVersion::class,'pid','item_id');
+    }
 }

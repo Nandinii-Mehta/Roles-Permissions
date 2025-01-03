@@ -61,7 +61,7 @@ Route::get('/items/create', [EnlvItemsMasterController::class, 'create'])->name(
 Route::post('/items', [EnlvItemsMasterController::class, 'store'])->name('items.store');
 
 
-Route::get('/purchasecodes',[PurchaseCodeController::class,'index'])->name('purchasecodes.index');
+Route::get('/purchasecodes', [PurchaseCodeController::class, 'index'])->name('purchasecodes.index');
 
 // Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard')->middleware(['auth', 'role:admin']);
 // Route::delete('/dashboard/{id}', [UserController::class, 'destroy'])->name('user.delete')->middleware(['auth', 'role:admin']);

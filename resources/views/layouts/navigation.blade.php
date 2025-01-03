@@ -20,21 +20,21 @@
                         <a class="block font-medium text-gray-400" href="{{route('home')}}"> Home </a>
                     </button>
                 </li>
-                @can('manage users')
+                @can('manage-users')
                 <li>
                     <a class="block font-medium text-gray-400" href="{{route('users.index')}}">
                         Users
                     </a>
                 </li>
                 @endcan
-                @can('manage roles')
+                @can('manage-roles')
                 <li>
                     <a class="block font-medium text-gray-400" href="{{route('roles.index')}}">
                         Roles
                     </a>
                 </li>
                 @endcan
-                @can('manage permissions')
+                @can('manage-permissions')
                 <li>
                     <a class="block font-medium text-gray-400" href="{{route('permissions.index')}}">
                         Permissions
