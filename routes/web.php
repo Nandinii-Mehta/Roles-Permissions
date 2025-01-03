@@ -58,6 +58,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/items/home', [EnlvItemsMasterController::class, 'home'])->name('items.home');
 Route::get('/items', [EnlvItemsMasterController::class, 'index'])->name('items.index');
 Route::get('/items/create', [EnlvItemsMasterController::class, 'create'])->name('items.create');
+Route::post('/items', [EnlvItemsMasterController::class, 'store'])->name('items.store');
 
 
 Route::get('/purchasecodes',[PurchaseCodeController::class,'index'])->name('purchasecodes.index');

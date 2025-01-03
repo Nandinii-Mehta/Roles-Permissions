@@ -17,4 +17,6 @@ class EnlvItemsMaster extends Model
         'image_thumbnail_link',
         'license_update'
     ];
+
+    public $timestamps = false;
 }
