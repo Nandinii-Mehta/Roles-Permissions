@@ -12,7 +12,7 @@ Route::get('/', function () {
 });
 
 
-// Route::middleware(['auth', 'role:admin'])->group(function () {
+Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/permissions', [PermissionController::class, 'index'])->name('permissions.index');
     Route::get('/permissions/create', [PermissionController::class, 'create'])->name('permissions.create');
     Route::post('/permissions', [PermissionController::class, 'store'])->name('permissions.store');
@@ -28,7 +28,14 @@ Route::get('/', function () {
     Route::delete('/roles/{id}', [RoleController::class, 'destroy'])->name('roles.destroy');
     Route::get('/roles/{id}/give-permissions', [RoleController::class, 'addPermissionToRole'])->name('roles.give-permissions');
     Route::put('/roles/{id}/give-permissions', [RoleController::class, 'givePermissionToRole'])->name('roles.give-permissions.update');
-// });
+
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+});
 
 
 Route::middleware('auth')->group(function () {
@@ -47,12 +54,7 @@ Route::middleware('auth')->group(function () {
 });
 
 
-Route::get('/users', [UserController::class, 'index'])->name('users.index');
-Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
-Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
-Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+
 
 // Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard')->middleware(['auth', 'role:admin']);
 // Route::delete('/dashboard/{id}', [UserController::class, 'destroy'])->name('user.delete')->middleware(['auth', 'role:admin']);
