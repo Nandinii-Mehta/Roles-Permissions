@@ -37,7 +37,7 @@
                                         <td class="text-center py-2 px-3 bg-slate-50 border-b">{{ $item->item_name }}</td>
                                         <td class="text-center py-2 px-3 bg-slate-50 border-b">
                                             @if (empty($item->version))
-                                                <p class="italic text-gray-500">no-version</p>
+                                                <p class=" text-gray-500">no-version</p>
                                             @else
                                                 {{ $item->version }}
                                             @endif
@@ -55,7 +55,7 @@
                                                     <a href="#"
                                                         class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Add
                                                         Version</a>
-                                                    <a href="#"
+                                                    <a href="{{ route('version.index', ['item_id' => $item->item_id]) }}"
                                                         class="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Manage
                                                         Version</a>
                                                     <a href="#"
