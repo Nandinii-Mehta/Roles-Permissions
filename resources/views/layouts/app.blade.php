@@ -25,7 +25,7 @@
                     @include('layouts.sidebar')
                 </div>
 
-                <div class="col-span-12 lg:col-span-9">
+                <div class="col-span-12 w-full lg:col-span-9">
                     @yield('content')
                 </div>
             </div>
