@@ -19,11 +19,19 @@
         </header>
         @endisset
         <!-- Page Content -->
-        <main>
-            @yield('content')
-        </main>
+        <div class="container px-2 min-h-[calc(100vh-138px)]  mt-4">
+            <div class="grid lg:grid-cols-12 gap-4">
+                <div class="col-span-12 min-h-[60.5rem] lg:col-span-3 mb-4">
+                    @include('layouts.sidebar')
+                </div>
+
+                <div class="col-span-12 lg:col-span-9">
+                    @yield('content')
+                </div>
+            </div>
+        </div>
     </div>
-    
+
     <!-- footer -->
     @include('layouts.footer')
 

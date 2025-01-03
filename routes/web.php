@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EnlvItemsMasterController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
@@ -53,6 +54,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/posts/{id}', [PostController::class, 'destroy'])->name('posts.destroy');
 });
 
+Route::get('/items/home', [EnlvItemsMasterController::class, 'home'])->name('items.home');
+Route::get('/items', [EnlvItemsMasterController::class, 'index'])->name('items.index');
 
 
 
