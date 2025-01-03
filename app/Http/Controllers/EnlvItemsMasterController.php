@@ -12,7 +12,7 @@ class EnlvItemsMasterController extends Controller
     public function home()
     {
         $items = EnlvItemsMaster::all();
-        return view('items.home');
+        return view('items.home',compact('items'));
     }
     public function index()
     {

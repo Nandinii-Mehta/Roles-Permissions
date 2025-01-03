@@ -15,16 +15,32 @@
                     <form action="{{route('posts.store')}}" method="post">
                         @csrf
                         <div class="mb-6">
-                            <label for="title" class="label">Title</label>
-                            <input type="text" id="title" name="title" class="form-control" placeholder="Enter Title">
+                            <label for="item_id" class="label">Item Id</label>
+                            <input type="number" id="item_id" name="item_id" class="form-control" placeholder="Enter Item-Id">
+                        </div>
+                        <div class="mb-6">
+                            <label for="item_name" class="label">Item Name</label>
+                            <input type="text" id="item_name" class="form-control" name="item_name" placeholder="Enter Item Name">
+                        </div>
+                        <div class="mb-6">
+                            <label for="version" class="label">Version</label>
+                            <input type="text" id="version" name="version" class="form-control" placeholder="Enter Version">
                         </div>
                         <div class="mb-6">
                             <label for="category" class="label">Category</label>
-                            <input type="text" id="category" class="form-control" name="category" placeholder="Enter Category">
+                            <input type="text" id="category" name="category" class="form-control" placeholder="Enter Category">
                         </div>
                         <div class="mb-6">
-                            <label for="description" class="label">Description</label>
-                            <input type="text" id="description" name="description" class="form-control" placeholder="Enter Description">
+                            <label for="color" class="label">Color</label>
+                            <input type="text" id="color" name="color" class="form-control" placeholder="Enter Color">
+                        </div>
+                        <div class="mb-6">
+                            <label for="image_thumbnail_link" class="label">Image Thumbnail Link</label>
+                            <input type="text" id="image_thumbnail_link" name="image_thumbnail_link" class="form-control" placeholder="Enter Description">
+                        </div>
+                        <div class="mb-6">
+                            <label for="license_update" class="label">License Update</label>
+                            <input type="number" id="license_update" name="license_update" class="form-control" placeholder="Enter License Update">
                         </div>
                         <button type="submit" class="btn bg-blue-500 text-white hover:bg-blue-600">Add</button>
                     </form>
@@ -34,12 +50,3 @@
     </div>
 </div>
 @endsection
-
-id,
-item_id,
-item_name,
-version,
-category,
-color,
-image_thumbnail_link,
-license_update

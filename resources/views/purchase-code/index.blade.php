@@ -5,9 +5,6 @@
 <div class="max-w-full mx-auto sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden p-4 shadow-sm sm:rounded-lg w-[calc(100%+8rem)]">
         <div class="card h-full min-w-full">
-            <a href="{{route('items.create')}}" class="bg-blue-600 m-3 px-3 mb-2 py-2 text-md text-white inline-block rounded hover:bg-blue-800 hover:text-white">
-                +Add New Item
-            </a>
             <div class="card-header">
                 <h4 class="card-title">Items</h4>
             </div><!--end card-header-->
@@ -34,7 +31,9 @@
                                 <td class="text-center py-2 px-3 bg-white border-b">{{ $dt->item_id }}</td>
                                 <td class="text-center py-2 px-3 bg-slate-50 border-b">{{ $dt->item_name }}</td>
                                 <td class="text-center py-2 px-3 bg-slate-50 border-b">{{ $dt->purchase_code }}</td>
-                                <td class="text-center py-2 px-3 bg-slate-50 border-b">{{ $dt->installed_version }}</td>
+                                <td class="text-center py-2 px-3 bg-slate-50 border-b">
+                                    <span class="bg-red-100 text-red-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-red-200 dark:text-red-900">{{ $dt->installed_version }}</span>
+                                </td>
                                 <td class="text-center py-2 px-3 bg-white border-b">{{ $dt->buyer }}</td>
                                 <td class="text-center py-2 px-3 bg-white border-b">{{ $dt->activated_domain }}</td>
                                 <td class="text-center py-2 px-3 bg-white border-b">{{ $dt->last_validate_request }}</td>
