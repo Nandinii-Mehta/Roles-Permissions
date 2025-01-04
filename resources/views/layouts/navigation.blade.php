@@ -41,7 +41,6 @@
                         </a>
                     </li>
                 @endcan
-
                 <li>
                     <a class="block font-medium text-gray-400" href="{{ route('posts.index') }}">
                         Posts
