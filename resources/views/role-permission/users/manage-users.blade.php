@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
+        <div >
+            <div >
                 <a href="{{ route('users.create') }}"
                     class="bg-blue-600 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-blue-800 hover:text-white">
                     Add User
@@ -14,10 +13,10 @@
                         <h4 class="card-title">Manage Users</h4>
                     </div><!--end card-header-->
                     <div class="card-body">
-                        <div class="justify-items-center relative overflow-x-auto sm:rounded">
-                            <table class="table-auto w-2/3 ">
+                        <div class="relative overflow-x-auto sm:rounded">
+                            <table class="table-auto w-full">
                                 <thead>
-                                    <tr class=" bg-blue-600 text-center">
+                                    <tr class=" bg-gray-400 text-center">
                                         <th class="text-sm font-medium text-white px-3 py-3 border-l border-transparent">
                                             ID
                                         </th>
@@ -83,5 +82,4 @@
                 </div> <!--end card-->
             </div>
         </div>
-    </div>
 @endsection

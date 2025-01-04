@@ -10,6 +10,7 @@
     <div class="min-h-screen bg-gray-100">
         @include('layouts.navigation')
 
+        
         <!-- Page Heading -->
         @isset($header)
         <header class="bg-white shadow">
@@ -18,14 +19,18 @@
             </div>
         </header>
         @endisset
+
         <!-- Page Content -->
-        <div class="container px-2 min-h-[calc(100vh-138px)]  mt-4">
+        <div class="px-2 min-h-[calc(100vh-138px)]  mt-4">
             <div class="grid lg:grid-cols-12 gap-4">
-                <div class="col-span-12 min-h-[60.5rem] lg:col-span-3 mb-4">
+                <div class="col-span-2 min-h-[60.5rem] lg:col-span-2 mb-4">
+                    @can('view-dashboard')
                     @include('layouts.sidebar')
+                    @endcan
                 </div>
 
-                <div class="col-span-12 w-full lg:col-span-9">
+
+                <div class="col-span-10">
                     @yield('content')
                 </div>
             </div>

@@ -9,10 +9,10 @@
                             Admin
                         </span>
                     </a>
-                    <a href="{{route('items.home')}}" class="list-group-item block border-0 p-2 text-slate-500 rounded-md  hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> Dashboard </a>
-                    <a href="{{route('items.index')}}" class="list-group-item block border-0 p-2 text-slate-500 rounded-md  hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> Items Management </a>
-                    <a href="{{route('purchasecodes.index')}}" class="list-group-item block border-0 p-2 text-slate-500 rounded-md  hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> Purchase Code </a>
-                    <a href="javascript:void(0)" class="list-group-item block border-0 p-2 text-slate-500 rounded-md  hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> </a>
+                    <a href="{{route('items.home')}}" class="list-group-item block border-0 p-2 text-slate-700 rounded-md  hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> Dashboard </a>
+                    <a href="{{route('items.index')}}" class="list-group-item block border-0 p-2 text-slate-700 rounded-md  hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> Items Management </a>
+                    <a href="{{route('purchasecodes.index')}}" class="list-group-item block border-0 p-2 text-slate-700 rounded-md  hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> Purchase Code </a>
+                    <a href="javascript:void(0)" class="list-group-item block border-0 p-2 text-slate-500 rounded-md  hover:text-slate-700 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700"> </a>
                 </div>
             </div>
         </div>

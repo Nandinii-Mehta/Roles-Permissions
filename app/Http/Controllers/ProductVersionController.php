@@ -9,9 +9,8 @@ class ProductVersionController extends Controller
 {
     public function index(Request $request)
     {
-        $itemid = $request->query('item_id');
-
-        $data = ProductVersion::where('pid', $itemid)->get();
+        $itemid = $request->query('id');
+        $data = ProductVersion::where('pid', '=',$itemid)->get();
         return view('versions.index', compact(['data', 'itemid']));
     }
 }
