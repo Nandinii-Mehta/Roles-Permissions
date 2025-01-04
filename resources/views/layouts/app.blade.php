@@ -6,8 +6,8 @@
 </head>
 
 <body data-layout-mode="light"
-    class="bg-gray-100 dark:bg-gray-900 bg-[url('../images/bg-body.png')] dark:bg-[url('../images/bg-body-2.png')]">
-    <div class="min-h-screen bg-gray-100">
+    class="bg-gray-100 bg-[url('../images/bg-body.png')] dark:bg-[url('../images/bg-body-2.png')]">
+    <div class="min-h-screen">
         @include('layouts.navigation')
 
         
@@ -28,8 +28,6 @@
                     @include('layouts.sidebar')
                     @endcan
                 </div>
-
-
                 <div class="col-span-10">
                     @yield('content')
                 </div>
