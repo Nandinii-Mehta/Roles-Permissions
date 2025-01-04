@@ -10,22 +10,22 @@
     <div class="min-h-screen">
         @include('layouts.navigation')
 
-        
+
         <!-- Page Heading -->
         @isset($header)
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
+            <header class="bg-white shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    {{ $header }}
+                </div>
+            </header>
         @endisset
 
         <!-- Page Content -->
         <div class="px-2 min-h-[calc(100vh-138px)]  mt-4">
             <div class="grid lg:grid-cols-12 gap-4">
-                <div class="col-span-2 min-h-[60.5rem] lg:col-span-2 mb-4">
+                <div class="col-span-10 lg:col-span-2 mb-4 min-h-[60.5rem]">
                     @can('view-dashboard')
-                    @include('layouts.sidebar')
+                        @include('layouts.sidebar')
                     @endcan
                 </div>
                 <div class="col-span-10">
