@@ -23,20 +23,23 @@
         <!-- Page Content -->
         <div class="px-2 min-h-[calc(100vh-138px)]  mt-4">
             <div class="grid lg:grid-cols-12 gap-4">
-                <div class="col-span-10 lg:col-span-2 mb-4 min-h-[60.5rem]">
-                    @can('view-dashboard')
+                @can('view-dashboard')
+                    <div class="col-span-10 lg:col-span-2 mb-4 min-h-[60.5rem]">
                         @include('layouts.sidebar')
-                    @endcan
-                </div>
-                <div class="col-span-10">
-                    @yield('content')
-                </div>
+                    </div>
+                    <div class="col-span-10">
+                        @yield('content')
+                    </div>
+                @else
+                    <div class="col-span-12">
+                        @yield('content')
+                    </div>
+                @endcan
             </div>
         </div>
-    </div>
 
-    <!-- footer -->
-    @include('layouts.footer')
+        <!-- footer -->
+        @include('layouts.footer')
 
 </body>
 

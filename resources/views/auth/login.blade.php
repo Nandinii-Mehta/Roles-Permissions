@@ -2,7 +2,8 @@
 <!-- Session Status -->
 <x-auth-session-status class="mb-4" :status="session('status')" />
 
-<body data-layout-mode="light" class="bg-gray-100 dark:bg-gray-900 bg-[url('../images/bg-body.png')] dark:bg-[url('../images/bg-body-2.png')]">
+<body data-layout-mode="light"
+    class="bg-gray-100 dark:bg-gray-800 bg-[url('../images/bg-body.png')] dark:bg-[url('../images/bg-body-2.png')]">
     <div class="relative flex flex-col justify-center min-h-screen overflow-hidden">
         <div
             class="w-full  m-auto bg-white dark:bg-slate-800/60 rounded shadow-lg ring-2 ring-slate-300/50 dark:ring-slate-700/50 lg:max-w-md">
@@ -16,19 +17,20 @@
                 @csrf
                 <div>
                     <label for="email" class="label">Email</label>
-                    <input type="email" id="email" name="email" class="form-control dark:bg-slate-800/60 dark:border-slate-700/50"
-                        placeholder="Your Email" required>
+                    <input type="email" id="email" name="email"
+                        class="form-control dark:bg-slate-100 dark:border-slate-700/50" placeholder="Your Email"
+                        required>
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
                 <div class="mt-4">
                     <label for="password" class="label">Your password</label>
                     <input type="password" id="password" name="password"
-                        class="form-control dark:bg-slate-800/60 dark:border-slate-700/50" placeholder="Password"
-                        required>
+                        class="form-control dark:bg-slate-100 dark:border-slate-200" placeholder="Password" required>
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
                 @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}" class="text-xs text-gray-600 hover:underline">Forget Password?</a>
+                    <a href="{{ route('password.request') }}" class="text-xs text-gray-600 hover:underline">Forget
+                        Password?</a>
                 @endif
                 <div class="block mt-3">
                     <label class="custom-label">
@@ -48,7 +50,7 @@
                 </div>
             </form>
             <p class="mb-5 text-sm font-medium text-center text-slate-500"> Don't have an account? <a
-                    href="{{route('register')}}" class="font-medium text-blue-600 hover:underline">Sign up</a>
+                    href="{{ route('register') }}" class="font-medium text-blue-600 hover:underline">Sign up</a>
             </p>
         </div>
     </div>
@@ -87,7 +89,7 @@
 
 <!-- <div class="flex items-center justify-end mt-4">
         @if (Route::has('password.request'))
-        <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+<a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
             {{ __('Forgot your password?') }}
         </a>
-        @endif -->
+@endif -->

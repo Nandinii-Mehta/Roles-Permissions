@@ -1,69 +1,96 @@
 @extends('layouts.app')
 
 @section('content')
-    <div >
-        @if (session('status'))
-        <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
-            <span class="font-medium">{{session('status')}}</span>
+    <div class="container  mx-auto px-2">
+        <div class="flex flex-wrap">
+            <div class="flex items-center py-4 w-full">
+                <div class="w-full">
+                    <div class="">
+                        <div class="flex flex-wrap justify-between">
+                            <div class="items-center ">
+                                <h1 class="font-semibold text-xl mb-0 block dark:text-slate-100">Roles</h1>
+                                <ol class="list-reset flex text-sm">
+                                    <li><a href="{{ route('home') }}" class="text-gray-500">Home</a></li>
+                                    <li><span class="text-gray-500 mx-2">/</span></li>
+                                    <li class="text-gray-500">Roles</li>
+                                    <li><span class="text-gray-500 mx-2">/</span></li>
+                                    <li class="text-blue-600 hover:text-blue-700">Index</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        @endif
-        <div >
-            <a href="{{route('roles.create')}}" class="bg-blue-600 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-blue-800 hover:text-white">
-                Add Role
-            </a>
-
-            <div class="card h-full">
-                <div class="card-header">
-                    <h4 class="card-title">Manage Roles</h4>
-                </div><!--end card-header-->
-                <div class="card-body">
-                    <div class="relative overflow-x-auto sm:rounded">
-                        <table class="table-auto w-full">
-                            <thead>
-                                <tr class=" bg-gray-400 text-center">
-                                    <th class="text-sm font-medium text-white px-3 py-3 border-l border-transparent">
+    </div><!--end container-->
+    <div class="card">
+        <div class="card-header flex items-center justify-between">
+            <h4 class="card-title">Manage Roles</h4>
+            <button type="button"
+                class="px-3 py-2 text-xs font-medium text-center text-white bg-blue-500 rounded hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+                <a href="{{ route('roles.create') }}"> Add Role</a>
+            </button>
+        </div>
+        <div>
+            @if (session('status'))
+                <div class="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800"
+                    role="alert">
+                    <span class="font-medium">{{ session('status') }}</span>
+                </div>
+            @endif
+            <div class="card-body">
+                <div class="relative overflow-x-auto">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400" id="datatable_1">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-slate-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="p-4">
+                                    <label class="custom-label">
                                         ID
-                                    </th>
-                                    <th class="text-sm font-medium text-white px-3 py-3">
-                                        Name
-                                    </th>
-                                    <th class="text-sm font-medium text-white px-3 py-3 border-r border-transparent">
-                                        Action
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($roles as $role)
-                                <tr>
-                                    <td class="text-center text-dark py-2 px-3 bg-slate-50 dark:bg-slate-900/20 dark:text-slate-300 border-b border-l border-[#E8E8E8] dark:border-slate-900">
-                                        {{$role->id}}
+                                    </label>
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Name
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($roles as $role)
+                                <tr
+                                    class="bg-white  dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-slate-700/50">
+                                    <td class="w-4 p-4">
+                                        {{ $role->id }}
                                     </td>
-                                    <td class="text-center text-dark py-2 px-3 bg-white dark:bg-slate-700 dark:text-slate-300 border-b border-[#E8E8E8] dark:border-slate-900">
-                                        {{$role->name}}
+                                    <td class="px-6 py-4">
+                                        {{ $role->name }}
                                     </td>
-                                    <td class="flex space-x-2 justify-center text-center text-dark py-2 px-3 bg-slate-50 dark:bg-slate-900/20 dark:text-slate-300 border-b border-[#E8E8E8] dark:border-slate-900">
-                                        <a href="{{route('roles.give-permissions',$role->id)}}" class="border border-gray-500 px-3 py-2 text-sm text-gray-500 inline-block rounded hover:bg-gray-500 hover:text-white">
-                                            Add / Edit Role-Permission
+                                    <td class="px-6 py-4 text-right flex space-x-2">
+                                        <a href="{{ route('roles.give-permissions', $role->id) }}"
+                                            class="font-medium text-green-600 dark:text-green-500 hover:underline">
+                                            Add / Edit Permission
                                         </a>
-                                        <a href="{{route('roles.edit',$role->id)}}" class="border border-green-700 px-3 py-2 text-sm text-green-700 inline-block rounded hover:bg-green-800 hover:text-white">
+                                        <a href="{{ route('roles.edit', $role->id) }}"
+                                            class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
                                             Edit
                                         </a>
-                                        <form method="post" action="{{route('roles.destroy',$role->id)}}">
+                                        <form method="post" action="{{ route('roles.destroy', $role->id) }}">
                                             @csrf
                                             @method('delete')
-                                            <button class="border border-red-500 px-3 py-2 text-sm text-red-500 inline-block rounded hover:bg-red-500 hover:text-white" type="submit">
+                                            <button class="font-medium text-red-600 dark:text-red-500 hover:underline"
+                                                type="submit">
                                                 Delete
                                             </button>
                                         </form>
                                     </td>
                                 </tr>
-                                @endforeach
+                            @endforeach
 
-                            </tbody>
-                        </table>
-                    </div>
-                </div><!--end card-body-->
-            </div> <!--end card-->
-        </div>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--end card-body-->
+        </div> <!--end card-->
     </div>
 @endsection

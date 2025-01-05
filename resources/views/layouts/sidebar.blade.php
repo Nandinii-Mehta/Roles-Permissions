@@ -4,7 +4,7 @@
             <div id="Inbox" role="tabpanel" aria-labelledby="Inbox-tab" class="space-y-2">
                 <!-- User Info -->
                 <a href="javascript:void(0)"
-                    class="list-group-item border-0 text-blue font-medium p-2 rounded-md bg-slate-50 dark:bg-slate-700 dark:text-slate-300 flex space-x-3 items-center">
+                    class="list-group-item border-0 text-black font-medium p-2 rounded-md bg-slate-50 dark:bg-slate-700 dark:text-slate-300 flex space-x-3 items-center">
                     <img class="h-9 w-9 rounded-full" src="{{ asset('assets/images/users/avatar-1.jpg') }}"
                         alt="user photo" />
                     <span>Admin</span>

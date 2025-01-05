@@ -1,36 +1,59 @@
- @extends('layouts.app')
+@extends('layouts.app')
 
- @section('content')
- <div class="py-12">
-     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-4">
-             <a href="{{route('posts.index')}}" class="bg-red-500 px-3 mb-2 py-2 text-sm text-white inline-block rounded hover:bg-red-800 hover:text-white">
-                 Back
-             </a>
-             <div class="card h-full">
-                 <div class="card-header">
-                     <h4 class="card-title">Add Post</h4>
-                 </div>
-                 <div class="card-body">
-                     <form action="{{route('posts.store')}}" method="post">
-                         @csrf
-                         <div class="mb-6">
-                             <label for="title" class="label">Title</label>
-                             <input type="text" id="title" name="title" class="form-control" placeholder="Enter Title">
-                         </div>
-                         <div class="mb-6">
-                             <label for="category" class="label">Category</label>
-                             <input type="text" id="category" class="form-control" name="category" placeholder="Enter Category">
-                         </div>
-                         <div class="mb-6">
-                             <label for="description" class="label">Description</label>
-                             <input type="text" id="description" name="description" class="form-control" placeholder="Enter Description">
-                         </div>
-                         <button type="submit" class="btn bg-blue-500 text-white hover:bg-blue-600">Add</button>
-                     </form>
-                 </div><!--end card-body-->
-             </div>
-         </div><!--end card-->
-     </div>
- </div>
- @endsection
+@section('content')
+    <div class="container  mx-auto px-2">
+        <div class="flex flex-wrap">
+            <div class="flex items-center py-4 w-full">
+                <div class="w-full">
+                    <div class="">
+                        <div class="flex flex-wrap justify-between">
+                            <div class="items-center ">
+                                <h1 class="font-semibold text-xl mb-0 block dark:text-slate-100">Posts</h1>
+                                <ol class="list-reset flex text-sm">
+                                    <li><a href="{{ route('home') }}" class="text-gray-500">Home</a></li>
+                                    <li><span class="text-gray-500 mx-2">/</span></li>
+                                    <li class="text-gray-500">Posts</li>
+                                    <li><span class="text-gray-500 mx-2">/</span></li>
+                                    <li><a href="{{ route('posts.index') }}" class="text-gray-500">Index</a></li>
+                                    <li><span class="text-gray-500 mx-2">/</span></li>
+                                    <li class="text-blue-600 hover:text-blue-700">Create</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!--end container-->
+    <div class="card">
+        <div class="card-header flex items-center  justify-between">
+            <h4 class="card-title">Add Posts</h4>
+            <button type="button"
+                class="px-3 py-2 text-xs font-medium text-center text-white bg-red-500 rounded hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-red-300 dark:bg-red-500 dark:hover:bg-red-600 dark:focus:ring-red-800">
+                <a href="{{ route('posts.index') }}">Back</a>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="relative overflow-x-auto">
+                <form action="{{ route('posts.store') }}" method="post">
+                    @csrf
+                    <div class="mb-6">
+                        <label for="title" class="label">Title</label>
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Enter Title">
+                    </div>
+                    <div class="mb-6">
+                        <label for="category" class="label">Category</label>
+                        <input type="text" id="category" class="form-control" name="category"
+                            placeholder="Enter Category">
+                    </div>
+                    <div class="mb-6">
+                        <label for="description" class="label">Description</label>
+                        <input type="text" id="description" name="description" class="form-control"
+                            placeholder="Enter Description">
+                    </div>
+                    <button type="submit" class="btn bg-blue-500 text-white hover:bg-blue-600">Add</button>
+                </form>
+            </div><!--end card-body-->
+        </div><!--end card-->
+    </div>
+@endsection

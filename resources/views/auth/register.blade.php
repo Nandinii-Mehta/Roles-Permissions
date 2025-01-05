@@ -12,19 +12,19 @@
                 @csrf
                 <div>
                     <label for="name" class="label">Name</label>
-                    <input type="text" id="name" name="name" class="form-control dark:bg-slate-800/60 dark:border-slate-700/50" placeholder="Enter Name" required>
+                    <input type="text" id="name" name="name" class="form-control dark:bg-slate-100 dark:border-slate-700/50" placeholder="Enter Name" required>
                 </div>
                 <div>
                     <label for="email" class="label">Email</label>
-                    <input type="email" id="email" name="email" class="form-control  dark:bg-slate-800/60 dark:border-slate-700/50" placeholder="Enter Email" required>
+                    <input type="email" id="email" name="email" class="form-control  dark:bg-slate-100 dark:border-slate-700/50" placeholder="Enter Email" required>
                 </div>
                 <div class="mt-4">
                     <label for="password" class="label">Your password</label>
-                    <input type="password" id="password" name="password" class="form-control  dark:bg-slate-800/60 dark:border-slate-700/50" placeholder="Enter Password" required>
+                    <input type="password" id="password" name="password" class="form-control  dark:bg-slate-100 dark:border-slate-700/50" placeholder="Enter Password" required>
                 </div>
                 <div class="mt-4">
                     <label for="password_confirmation" class="label">Confirm Password</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control  dark:bg-slate-800/60 dark:border-slate-700/50" placeholder="Enter Confirm Password" required>
+                    <input type="password" id="password_confirmation" name="password_confirmation" class="form-control  dark:bg-slate-100 dark:border-slate-700/50" placeholder="Enter Confirm Password" required>
                 </div>
                 <div class="mt-6">
                     <button

@@ -1,11 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+    <div class="card">
+        <div class="card-header flex items-center justify-between">
+            {{-- <h4 class="card-title"></h4> --}}
+        </div>
+        <div class="card-body">
             <p class="font-medium p-3">Welcome, to the site!</p>
         </div>
     </div>
-</div>
 @endsection

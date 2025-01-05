@@ -18,7 +18,7 @@ class PurchaseCodeController extends Controller
     }
 }
 
-// SELECT i.item_id,i.item_name,p.purchase_code,p.installed_version,p.buyer,p.activated_domain,p.last_validate_request 
-// FROM enlv_items_master i 
-// JOIN enlv_purchase_code_verifier p 
+// SELECT i.item_id,i.item_name,p.purchase_code,p.installed_version,p.buyer,p.activated_domain,p.last_validate_request
+// FROM enlv_items_master i
+// JOIN enlv_purchase_code_verifier p
 // ON i.item_id=p.item_id;
